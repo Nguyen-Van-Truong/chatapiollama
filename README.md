@@ -21,28 +21,46 @@ streamResponse(modelName, input, Consumer<String> onResponse): Streams the respo
 ChatWebSocketHandler: Handles WebSocket communication.
 
 After receiving a message from the client, it uses the OllamaService to stream responses back to the client in real-time.
+
 📡 API and WebSocket Endpoints
+
 🔗 WebSocket Endpoint
+
 URI: /chat
 Description: Establishes a WebSocket connection for real-time communication with the chatbot.
 Request: Send a text message (user input) via WebSocket.
 Response: The server streams the model's output word by word in real-time.
+
 🛠️ Sample Interaction:
 Connect to /chat via WebSocket.
 Send a message like "Hello, how are you?".
+
 The server responds in real-time, streaming each word of the model’s response, such as:
+
 css
 I am doing well, thank you!
+
 ⚙️ How to Run
 Clone the repository:
-git clone https://github.com/your-username/chat-api-ollama.git
+
+git clone https://github.com/Nguyen-Van-Truong/chatapiollama
+
 cd chat-api-ollama
+
 Install dependencies (Ensure you have Java and Maven installed):
+
 mvn clean install
+
 Run the application:
+
 mvn spring-boot:run
+
 Start Ollama in the background:
+
 ollama serve
+
 Start a WebSocket session: Use a WebSocket client (e.g., Postman or a browser extension) to connect to:
+
 ws://localhost:8080/chat
+
 Send a message: Interact with the chatbot by sending a text message, and receive real-time responses.
